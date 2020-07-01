@@ -1,0 +1,25 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Update blog</title>
+        <link href="{% static 'POST_FORM.css' %}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+      <div class="container">
+        <div class="jumbotron">
+            <form method="POST" action="/post_update/{{ blog_post_to_update.id }}">
+                {% csrf_token %}
+                <h1>Welcome to your blog!</h1>
+                <h2>Update a blog post here!</h2>
+                <p><label for="id_author_name">Author name:</label> <input type="text" name="author_name" maxlength="50" required="" id="id_author_name" value="{{ blog_post_to_update.author_name }}"></p>
+                <p><label for="id_author_email">Author email:</label> <input type="email" name="author_email" maxlength="50" required="" id="id_author_email" value="{{ blog_post_to_update.author_email }}"></p>
+                <p><label for="id_date_published">Date published:</label> <input type="text" name="date_published" required="" id="id_date_published" value="{{ blog_post_to_update.date_published }}"></p>
+                <p><label for="id_post_title">Post title:</label> <input type="text" name="post_title" maxlength="100" required="" id="id_post_title" value="{{ blog_post_to_update.post_title }}"></p>
+                <p><label for="id_post_content">Post content:</label> <input type="text" name="post_content" maxlength="10000" required="" id="id_post_content" value="{{ blog_post_to_update.post_content }}"></p>
+                <input type="submit" class="btn btn-primary" value="Update Post" />
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

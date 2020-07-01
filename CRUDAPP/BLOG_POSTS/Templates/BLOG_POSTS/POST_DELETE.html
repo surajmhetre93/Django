@@ -1,0 +1,18 @@
+<html>
+  <title>{{ blog_post_to_delete.post_title }}</title>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h3>{{ blog_post_to_delete.post_title }}</h3>
+        <h4>{{ blog_post_to_delete.post_content }}</h4>
+        <h5>{{ blog_post_to_delete.author_name }}</h5>
+        <h5>{{ blog_post_to_delete.date_published }}</h5>
+        <a href="POST_DELETE/{{ blog_post_to_delete.id }}" class="btn btn-danger">Delete</a>
+        <a href="POST_LIST" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+  </body>
+</html>

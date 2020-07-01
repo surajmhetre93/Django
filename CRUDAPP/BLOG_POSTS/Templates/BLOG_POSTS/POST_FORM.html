@@ -1,0 +1,21 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Create a blog</title>
+        <link href="{% static 'POST_FORM.css' %}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+      <div class="container">
+        <div class="jumbotron">
+            <form method="POST">
+                {% csrf_token %}
+                <h1>Welcome to your blog!</h1>
+                <h2>Create a blog post here!</h2>
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Create Post" />
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
