@@ -26,15 +26,15 @@
                     <td>{{ BlogPost.post_title }}</td>
                     <td>{{ BlogPost.post_content }}</td>
                     <td>
-                        <a href="POST_UPDATE/{{ BlogPost.id }}" class="btn btn-primary">Edit</a>
-                        <a href="POST_DELETE/{{ BlogPost.id }}" class="btn btn-danger">Delete</a>
+                        <a href="{% url 'POST_UPDATE' BlogPost.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'POST_DELETE' BlogPost.id %}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
             <tfoot>
                 <tr>
-                    <a href="POST_FORM" class="btn btn-success mx-auto">Create post</a>
+                    <a href="{% url 'POST_FORM' %}" class="btn btn-success mx-auto">Create post</a>
                 </tr>
             </tfoot>
         </table>

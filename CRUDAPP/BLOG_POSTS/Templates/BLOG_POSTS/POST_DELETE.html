@@ -6,12 +6,15 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h3>{{ blog_post_to_delete.post_title }}</h3>
-        <h4>{{ blog_post_to_delete.post_content }}</h4>
-        <h5>{{ blog_post_to_delete.author_name }}</h5>
-        <h5>{{ blog_post_to_delete.date_published }}</h5>
-        <a href="POST_DELETE/{{ blog_post_to_delete.id }}" class="btn btn-danger">Delete</a>
-        <a href="POST_LIST" class="btn btn-primary">Back</a>
+        <form method="POST" action="{% url 'POST_DELETE' blog_post_to_delete.id %}">
+          {% csrf_token %}
+          <h3>{{ blog_post_to_delete.post_title }}</h3>
+          <h4>{{ blog_post_to_delete.post_content }}</h4>
+          <h5>{{ blog_post_to_delete.author_name }}</h5>
+          <h5>{{ blog_post_to_delete.date_published }}</h5>
+          <button type="submit" class="btn btn-danger">Delete</a>
+          <a href="{% url 'POST_LIST' %}" class="btn btn-primary">Back</a>
+        </form>
       </div>
     </div>
   </body>

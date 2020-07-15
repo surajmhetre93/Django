@@ -8,7 +8,7 @@
     <body>
       <div class="container">
         <div class="jumbotron">
-            <form method="POST" action="/post_update/{{ blog_post_to_update.id }}">
+            <form method="POST" action="{% url 'POST_UPDATE' blog_post_to_update.id %}">
                 {% csrf_token %}
                 <h1>Welcome to your blog!</h1>
                 <h2>Update a blog post here!</h2>
